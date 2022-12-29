@@ -1,0 +1,7 @@
+<?php
+
+use Wpcommander\Artisan\Artisan;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+Artisan::exec( __DIR__ );
