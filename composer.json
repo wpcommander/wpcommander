@@ -2,9 +2,6 @@
     "name": "wpcommander/wpcommander",
     "type": "project",
     "license": "MIT",
-    "scripts": {
-        "post-create-project-cmd" : "php artisan"
-    },
     "require": {
         "php": ">=7.4"
     },
