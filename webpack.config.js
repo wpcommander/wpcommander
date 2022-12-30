@@ -5,6 +5,7 @@ const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 const js = {
 	...defaultConfig,
 	entry: {
+		'app' : './resources/js/app.js'
 		// add your all js entry
 	},
 	output: {
@@ -17,6 +18,7 @@ const js = {
 const scss = {
 	...defaultConfig,
 	entry: {
+		'app' : './resources/sass/app.scss'
 		// add your all scss entry
 	},
 	output: {
