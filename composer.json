@@ -10,9 +10,7 @@
     },
     "scripts": {
         "build": [
-            "@composer --no-plugins --no-interaction install --no-scripts --no-dev",
-            "npm run build",
-            "composer update"
+            "@composer --no-plugins --no-interaction install --no-scripts --no-dev"
         ]
     },
     "autoload": {

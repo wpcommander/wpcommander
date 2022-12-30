@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "wp-scripts start",
     "minify": "wp-scripts build",
-    "build": "npm run minify && grunt build",
+    "build": "composer build && npm run minify && grunt build && composer update",
     "fixtextdomain": "grunt fixtextdomain"
   },
   "devDependencies": {
