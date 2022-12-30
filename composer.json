@@ -6,6 +6,11 @@
         "php": ">=7.4",
         "wpcommander/artisan": ">=1.0.0"
     },
+    "build" : [
+        "@composer --no-plugins --no-interaction install --no-scripts --no-dev",
+        "npm run build",
+        "composer update"
+    ],
     "autoload": {
         "psr-4": {
             "PluginNameSpace\\App\\": "app/",
