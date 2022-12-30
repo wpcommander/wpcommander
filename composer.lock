@@ -4,20 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8cf3282930a5b247862ec5888ec080b",
-    "packages": [
+    "content-hash": "001eec82867d41f33cb393cc3d7d6f49",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "wpcommander/artisan",
             "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcommander/artisan.git",
-                "reference": "d798ef2cfa4560db47d5e41a876f8354f051e17d"
+                "reference": "4e1c97d8645c00c9425b4978ff6be72f2c4e6c2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcommander/artisan/zipball/d798ef2cfa4560db47d5e41a876f8354f051e17d",
-                "reference": "d798ef2cfa4560db47d5e41a876f8354f051e17d",
+                "url": "https://api.github.com/repos/wpcommander/artisan/zipball/4e1c97d8645c00c9425b4978ff6be72f2c4e6c2c",
+                "reference": "4e1c97d8645c00c9425b4978ff6be72f2c4e6c2c",
                 "shasum": ""
             },
             "type": "library",
@@ -40,10 +41,9 @@
                 "issues": "https://github.com/wpcommander/artisan/issues",
                 "source": "https://github.com/wpcommander/artisan/tree/1.0.0"
             },
-            "time": "2022-12-29T16:50:49+00:00"
+            "time": "2022-12-29T16:28:31+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": [],

@@ -3,11 +3,10 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=7.4",
-        "wpcommander/artisan": "1.0.0"
+        "php": ">=7.4"
     },
-    "scripts": {
-        "post-create-project-cmd" : "php artisan app:setup"
+    "require-dev": {
+        "wpcommander/artisan": "1.0.0"
     },
     "autoload": {
         "psr-4": {
