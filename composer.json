@@ -3,9 +3,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=7.4"
-    },
-    "require-dev": {
+        "php": ">=7.4",
         "wpcommander/artisan": "1.0.0"
     },
     "autoload": {
