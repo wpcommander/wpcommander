@@ -3,7 +3,8 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+        "wpcommander/framework": "1.0.0"
     },
     "require-dev": {
         "wpcommander/artisan": "1.0.0"
