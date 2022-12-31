@@ -9,7 +9,7 @@
 WpCommander is a wordpress plugin framework that makes web development easy and enjoyable. Its expressive syntax and range of features help developers create high-quality applications with ease.
 
 1. [A straightforward and fast routing system](#routing)
-2. [A robust dependency injection container]()
+2. [A robust dependency injection container](#dependency-injection)
 3. [Middleware Declaration]()
 4. [Developer-friendly enqueue declaration]()
 5. [Global Functions]()
@@ -61,3 +61,19 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 	Route::get( $uri, $callback );
 	Route::post( $uri, $callback );
 	```
+
+## Dependency Injection
+
+In your route's callback function, you can specify the types of dependencies that your route requires by using type hints. These dependencies will be automatically resolved and passed into the callback by the WpCommander service container. For instance, you can type a hint in the ```WP_REST_Request``` class to have the current HTTP request automatically passed into your route callback.
+
+```php
+use WP_REST_Request;
+
+Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
+    // ...
+} );
+```
+
+## License
+
+The WpCommander is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
