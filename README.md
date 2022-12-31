@@ -34,13 +34,14 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 1. WpCommander most basic routes are defined by a URI and a closure, which allows you to easily specify routes and behavior without the need for complex routing configuration files.
 
    ```php
-   use PluginNameSpace\Bootstrap\Route;
+	use PluginNameSpace\Bootstrap\Route;
 
-   Route::get( '/hello-world', function () {
-   	wp_send_json( [
-   		'message' => 'Hello World'
-   	] );
-   } );
+	Route::get( '/hello-world', function () {
+		wp_send_json( [
+			'message' => 'Hello World'
+		] );
+	} );
+
    ```
 
 2. All the WpCommander routes can be found in the routes directory, which your application's RouteServiceProvider automatically loads. The routes/api.php file contains routes for the rest API interface.
@@ -57,6 +58,6 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 	You can use the router to register routes that are capable of responding to any HTTP verb.
 
 	```php
-	Route::get($uri, $callback);
-	Route::post($uri, $callback);
+	Route::get( $uri, $callback );
+	Route::post( $uri, $callback );
 	```
