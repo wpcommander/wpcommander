@@ -10,7 +10,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 
 1. [A straightforward and fast routing system](#routing)
 2. [A robust dependency injection container](#dependency-injection)
-3. [Middleware Declaration]()
+3. [Middleware Declaration](#middleware)
 4. [Developer-friendly enqueue declaration]()
 5. [Global Functions]()
 6. Database Query Builder ( upcoming )
@@ -73,6 +73,53 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
     // ...
 } );
 ```
+
+## Middleware
+
+1. To create a new middleware, use the make:middleware Artisan command:
+
+	```
+	php artisan make:middleware EnsureIsUserAdmin
+	```
+2. This command will place a new EnsureIsUserAdmin class within your app/Http/Middleware directory.
+	```php
+	<?php
+
+	namespace PluginNameSpace\App\Http\Middleware;
+
+	use WpCommander\Contracts\Middleware;
+	use WP_REST_Request;
+
+	class EnsureIsUserAdmin implements Middleware
+	{
+		/**
+		* Handle an incoming request.
+		*
+		* @param  \WP_REST_Request  $wp_rest_request
+		* @return bool
+		*/
+		public function handle( WP_REST_Request $wp_rest_request )
+		{
+			return current_user_can( 'manage_options' );
+		}
+	}
+	```
+
+3. Register the middleware to Inside the middleware array inside the ```app/config.php``` file
+
+	```php
+	'middleware'      => [
+		'admin' => EnsureIsUserAdmin::class
+	]
+	```
+4. Now You can apply middleware to all routes within a group. The middleware will be executed in the order in which they are listed in the middleware array.
+
+	```php
+	Route::group(['middleware' => ['admin'], 'prefix' => 'user'], function() {
+		Route::get('/', [UserController::class, 'get']);
+		Route::post('/', [UserController::class, 'create']);
+	});
+	```
 
 ## License
 

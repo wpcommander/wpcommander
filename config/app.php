@@ -1,5 +1,8 @@
 <?php
 
+use PluginNameSpace\App\Http\Middleware\EnsureIsUserAdmin;
+use PluginNameSpace\App\Http\Providers\AdminMenuServiceProvider;
+
 return [
     /**
      * Plugin Current Version
@@ -11,7 +14,9 @@ return [
      */
     'providers'       => [],
 
-    'admin_providers' => [],
+    'admin_providers' => [
+        AdminMenuServiceProvider::class
+    ],
     /**
      * Plugin Api Namespace
      */
@@ -19,5 +24,7 @@ return [
 
     'api_versions'    => [],
 
-    'middleware'      => []
+    'middleware'      => [
+        'admin' => EnsureIsUserAdmin::class
+    ]
 ];
