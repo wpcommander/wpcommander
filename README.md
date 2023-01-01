@@ -24,10 +24,13 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 1. Create plugin with wpcommander
 
    ```
-   composer create-project wpcommander/wpcommander
+   composer create-project wpcommander/wpcommander plugin-name
    ```
-
-2. Setup plugin name and other information, After running this command `npm install` will automatically executed
+2. Go to the plugin directory
+   ```
+   cd plugin-name
+   ```
+3. Setup plugin name and other information, After running this command `npm install` will automatically executed
 
    ```
    php artisan app:setup
