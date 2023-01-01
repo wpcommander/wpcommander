@@ -14,7 +14,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 3. [Controller Declaration](#controller)
 3. [Service Provider Declaration](#service-provider)
 4. [Developer-friendly enqueue declaration](#enqueue-declaration)
-5. [Global Functions]()
+5. [Usable utils methods](#utils-methods)
 6. Database Query Builder ( upcoming )
 
 ### Installation
@@ -199,6 +199,24 @@ In enqueues directory, you will get 2 files. one for admin enqueue and another o
 
 	wp_enqueue_script( 'myplugin', Utils::asset('js/script.js'), [], Utils::version() );
 	```
+
+## Utils methods
+
+How to use utils methods
+
+```php
+use PluginNameSpace\Bootstrap\Utils;
+
+$url = 'https://domain.com'
+$url = Utils::url_add_params($url, ['key' => 'value', 'key1' => 'value1']);
+```
+| Available Methods | Example |
+| ------------------------ | ---------------------------------------------------- |
+| `asset()` | Get asset URL |
+| `version()` | Get your plugin currency version |
+| `json_encode_for_attr()` | JSON encoding for HTML attribute. you can use it for passing data from PHP to js with data- attribute |
+| `url_add_params()` | You can add params to the URL using this method. If you use this method `? And &` will not conflict. |
+| `import_elementor_demo` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
 ## License
 
 The WpCommander is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
