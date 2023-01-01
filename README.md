@@ -11,6 +11,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 1. [A straightforward and fast routing system](#routing)
 2. [A robust dependency injection container](#dependency-injection)
 3. [Middleware Declaration](#middleware)
+3. [Controller Declaration](#controller)
 4. [Developer-friendly enqueue declaration]()
 5. [Global Functions]()
 6. Database Query Builder ( upcoming )
@@ -81,7 +82,7 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 	```
 	php artisan make:middleware EnsureIsUserAdmin
 	```
-2. This command will place a new EnsureIsUserAdmin class within your app/Http/Middleware directory.
+2. This command will place a new EnsureIsUserAdmin class within your ```app/Http/Middleware``` directory.
 	```php
 	<?php
 
@@ -119,6 +120,33 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 		Route::get('/', [UserController::class, 'get']);
 		Route::post('/', [UserController::class, 'create']);
 	});
+	```
+
+## Controller
+1. To create a new controller, use the ```make:controller``` Artisan command
+
+	```
+	php artisan make:controller UserController
+	```
+2. Controller class example
+	```php
+	<?php
+
+	namespace PluginNameSpace\App\Http\Controllers;
+
+	class UserController extends Controller
+	{
+		public function show( $id )
+		{
+			return wp_send_json( get_user_by( "id", $id ), 200 );
+		}
+	}
+	```
+3. To create a route to this controller method, you can use the following approach
+	```php
+	use PluginNameSpace\App\Http\Controllers\UserController;
+
+	Route::get( '/user/{id}', [UserController::class, 'show'] );
 	```
 
 ## License
