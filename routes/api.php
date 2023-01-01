@@ -2,10 +2,22 @@
 
 use PluginNameSpace\Bootstrap\Route;
 
-Route::group( 'demo', function () {
+/**
+ * Frontend rest api
+ */
+Route::get( '/posts', function () {
+    //
+} );
+
+/**
+ * Admin rest api
+ */
+Route::group( ['prefix' => 'user', 'middleware' => ['admin']], function () {
     Route::get( '/', function () {
-        wp_send_json( [
-            'message' => 'This is a demo api'
-        ] );
+        //
+    } );
+
+    Route::get( '/create', function () {
+        //
     } );
 } );
