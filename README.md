@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://packagist.org/packages/wpcommander/framework"><img src="https://img.shields.io/packagist/dt/wpcommander/framework" alt="Total Downloads"></a>
+<!-- <a href="https://packagist.org/packages/wpcommander/framework"><img src="https://img.shields.io/packagist/dt/wpcommander/framework" alt="Total Downloads"></a> -->
 <a href="https://packagist.org/packages/wpcommander/framework"><img src="https://img.shields.io/packagist/v/wpcommander/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/wpcommander/framework"><img src="https://img.shields.io/packagist/l/wpcommander/framework" alt="License"></a>
 </p>
@@ -16,7 +16,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 4. [Developer-friendly enqueue declaration](#enqueue-declaration)
 5. [Usable utils methods](#utils-methods)
 6. [Production Build](#production-build)
-6. Database Query Builder ( upcoming )
+6. Database Query Builder ( Up Coming )
 
 ### Installation
 

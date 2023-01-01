@@ -18,4 +18,3 @@ class EnsureIsUserAdmin implements Middleware
         return current_user_can( 'manage_options' );
     }
 }
-
