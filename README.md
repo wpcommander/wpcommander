@@ -48,7 +48,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 
    ```
 
-2. All the WpCommander routes can be found in the routes directory, which your application's RouteServiceProvider automatically loads. The routes/api.php file contains routes for the rest API interface.
+2. All the WpCommander routes can be found in the routes directory, which your application's RouteServiceProvider automatically loads. The `routes/api.php` file contains routes for the rest API interface.
 
 	```php
 	use PluginNameSpace\App\Http\Controllers\UserController;
@@ -80,7 +80,7 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 
 ## Middleware
 
-1. To create a new middleware, use the make:middleware Artisan command:
+1. To create a new middleware, use the `make:middleware` Artisan command:
 
 	```
 	php artisan make:middleware EnsureIsUserAdmin
@@ -176,7 +176,7 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 		}
 	}
 	```
-3. Register the service to Inside the providers array inside the app/config.php file
+3. Register the service to Inside the providers array inside the `app/config.php` file
 	```php
 	use PluginNameSpace\App\Http\Providers\AdminMenuServicePro;
 
@@ -240,7 +240,7 @@ $url = Utils::url_add_params($url, ['key' => 'value', 'key1' => 'value1']);
 | `json_encode_for_attr()` | JSON encoding for HTML attribute. you can use it for passing data from PHP to js with data- attribute |
 | `url_add_params()` | You can add params to the URL using this method. If you use this method `? And &` will not conflict. |
 | `is_admin_page` | Using the method you can check the admin's current page inside any hook. no matter whether the wp is fully loaded or not. |
-| `import_elementor_demo()` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
+| `import_elementor_demo()` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the `SVG correctly`. |
 
 ## Tailwind Css Config
 
