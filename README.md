@@ -12,6 +12,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 2. [A robust dependency injection container](#dependency-injection)
 3. [Middleware Declaration](#middleware)
 3. [Controller Declaration](#controller)
+3. [Service Provider Declaration](#service-provider)
 4. [Developer-friendly enqueue declaration]()
 5. [Global Functions]()
 6. Database Query Builder ( upcoming )
@@ -149,6 +150,38 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 	Route::get( '/user/{id}', [UserController::class, 'show'] );
 	```
 
+
+## Service Provider
+
+1. To create a new service provider, use the ```make:provider``` Artisan command
+
+	```
+	php artisan make:provider AdminMenuServiceProvider
+	```
+2. Service provider class example
+	```php
+	<?php
+
+	namespace PluginNameSpace\App\Http\Providers;
+
+	use WpCommander\Contracts\ServiceProvider;
+
+	class AdminMenuServiceProvider extends ServiceProvider
+	{
+		public function boot()
+		{
+			//
+		}
+	}
+	```
+3. Register the service to Inside the providers array inside the app/config.php file
+	```php
+	use PluginNameSpace\App\Http\Providers\AdminMenuServicePro;
+
+	'providers'       => [
+        AdminMenuServiceProvider::class
+    ]
+	
 ## License
 
 The WpCommander is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
