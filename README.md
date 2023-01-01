@@ -13,7 +13,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 3. [Middleware Declaration](#middleware)
 3. [Controller Declaration](#controller)
 3. [Service Provider Declaration](#service-provider)
-4. [Developer-friendly enqueue declaration]()
+4. [Developer-friendly enqueue declaration](#enqueue-declaration)
 5. [Global Functions]()
 6. Database Query Builder ( upcoming )
 
@@ -182,6 +182,23 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
         AdminMenuServiceProvider::class
     ]
 	
+## Enqueue declaration
+In enqueues directory, you will get 2 files. one for admin enqueue and another one for frontend enqueue.
+
+1. For example, now we are declaring an admin script.
+
+	```php
+	<?php
+
+	use PluginNameSpace\Bootstrap\Application;
+	use PluginNameSpace\Bootstrap\Utils;
+
+	/**
+	* @var Application $application
+	*/
+
+	wp_enqueue_script( 'myplugin', Utils::asset('js/script.js'), [], Utils::version() );
+	```
 ## License
 
 The WpCommander is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
