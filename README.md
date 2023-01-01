@@ -11,12 +11,13 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 1. [A straightforward and fast routing system](#routing)
 2. [A robust dependency injection container](#dependency-injection)
 3. [Middleware Declaration](#middleware)
-3. [Controller Declaration](#controller)
-3. [Service Provider Declaration](#service-provider)
-4. [Developer-friendly enqueue declaration](#enqueue-declaration)
-5. [Usable utils methods](#utils-methods)
-6. [Production Build](#production-build)
-6. Database Query Builder ( Up Coming )
+4. [Controller Declaration](#controller)
+5. [Service Provider Declaration](#service-provider)
+6. [Views](#views)
+7. [Developer-friendly enqueue declaration](#enqueue-declaration)
+8. [Usable utils methods](#utils-methods)
+9. [Production Build](#production-build)
+10. Database Query Builder ( Up Coming )
 
 ## Installation
 
@@ -182,6 +183,27 @@ Route::get( '/users', function ( WP_REST_Request $wpRestRequest ) {
 	'providers'       => [
         AdminMenuServiceProvider::class
     ]
+
+## Views
+The `resources/views` directory contains views, which allow you to separate your application logic from your presentation logic.
+
+1. View Render
+	````php
+	use PluginNameSpace\Bootstrap\View;
+	
+	$users = get_users([]);
+
+	View::render('admin', compact('users'));
+	````
+
+2. View response for api
+	```php
+	use PluginNameSpace\Bootstrap\View;
+
+	View::send('admin', [
+		'users' => get_users([])
+	]);
+	```
 	
 ## Enqueue declaration
 In enqueues directory, you will get 2 files. one for admin enqueue and another one for frontend enqueue.
