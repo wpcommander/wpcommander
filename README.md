@@ -18,7 +18,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 6. [Production Build](#production-build)
 6. Database Query Builder ( Up Coming )
 
-### Installation
+## Installation
 
 1. Create plugin with wpcommander
 
