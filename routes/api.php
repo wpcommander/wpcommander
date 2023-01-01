@@ -1,5 +1,6 @@
 <?php
 
+use PluginNameSpace\App\Http\Controllers\UserController;
 use PluginNameSpace\Bootstrap\Route;
 
 /**
@@ -13,11 +14,7 @@ Route::get( '/posts', function () {
  * Admin rest api
  */
 Route::group( ['prefix' => 'user', 'middleware' => ['admin']], function () {
-    Route::get( '/', function () {
-        //
-    } );
-
-    Route::get( '/create', function () {
-        //
-    } );
+    Route::get( '/', [UserController::class, 'index'] );
+    Route::post( '/create', [UserController::class, 'create'] );
+    Route::get( '/{id}', [UserController::class, 'show'] );
 } );

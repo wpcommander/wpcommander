@@ -8,4 +8,4 @@ use PluginNameSpace\Bootstrap\Utils;
  */
 
 wp_enqueue_script( 'pluginFileName-app-js', Utils::asset('js/app.js'), [], Utils::version() );
-wp_enqueue_style( 'pluginFileName-app-css', Utils::asset('js/app.css'), [], Utils::version() );
+wp_enqueue_style( 'pluginFileName-app-css', Utils::asset('css/app.css'), [], Utils::version() );
