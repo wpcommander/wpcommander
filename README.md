@@ -219,9 +219,30 @@ $url = Utils::url_add_params($url, ['key' => 'value', 'key1' => 'value1']);
 | `url_add_params()` | You can add params to the URL using this method. If you use this method `? And &` will not conflict. |
 | `import_elementor_demo()` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
 
+## Tailwind Css Config
+
+You need to add a class to the parent element of the element or component you want to style with tailwindcss. For using this approach, tailwind CSS will not conflict with WordPress er default style.
+
+1. For configuration, the parent class goes to the `postcss.config.js` file.
+
+```js
+const parent_selector = '.parent-selector'
+```
+
+2. Example
+
+```html
+
+<div class="parent-selector">
+	<button type="button" disabled="" class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-indigo-500 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-pointer">
+	Submit
+	</button>
+</div>
+```
+
 ## Production Build
 
-1. For correction you text-domain go `Gruntfile.js` file and check it.
+1. For correction your text-domain go `Gruntfile.js` file and check it.
 	```js
 	const projectConfig = {
 		text_domain: 'plugin-text-domain'
