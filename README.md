@@ -15,6 +15,7 @@ WpCommander is a wordpress plugin framework that makes web development easy and 
 3. [Service Provider Declaration](#service-provider)
 4. [Developer-friendly enqueue declaration](#enqueue-declaration)
 5. [Usable utils methods](#utils-methods)
+6. [Production Build](#production-build)
 6. Database Query Builder ( upcoming )
 
 ### Installation
@@ -216,7 +217,23 @@ $url = Utils::url_add_params($url, ['key' => 'value', 'key1' => 'value1']);
 | `version()` | Get your plugin currency version |
 | `json_encode_for_attr()` | JSON encoding for HTML attribute. you can use it for passing data from PHP to js with data- attribute |
 | `url_add_params()` | You can add params to the URL using this method. If you use this method `? And &` will not conflict. |
-| `import_elementor_demo` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
+| `import_elementor_demo()` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
+
+## Production Build
+
+1. For correction you text-domain go `Gruntfile.js` file and check it.
+	```js
+	const projectConfig = {
+		text_domain: 'plugin-text-domain'
+	};
+	```
+2. To build a production zip, use the `npm run build` command.
+
+	```
+	npm run build
+	```
+3. After complete running the command you will get your production zip and files inside to `../dist/` directory
+
 ## License
 
 The WpCommander is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
