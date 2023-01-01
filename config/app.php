@@ -1,7 +1,7 @@
 <?php
 
 use PluginNameSpace\App\Http\Middleware\EnsureIsUserAdmin;
-use PluginNameSpace\App\Http\Providers\AdminMenuServiceProvider;
+use PluginNameSpace\App\Providers\AdminMenuServiceProvider;
 
 return [
     /**

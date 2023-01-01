@@ -1,6 +1,6 @@
 <?php
 
-namespace PluginNameSpace\App\Http\Providers;
+namespace PluginNameSpace\App\Providers;
 
 use WpCommander\Contracts\ServiceProvider;
 
