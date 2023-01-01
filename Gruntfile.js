@@ -3,6 +3,7 @@ module.exports = grunt => {
 
 	const projectConfig = {
 		name: 'pluginFileName',
+		text_domain: 'pluginFileName',
 		srcDir: './',
 		distDir: `../dist/pluginFileName/`,
 		version: '1.0.0'
@@ -108,7 +109,7 @@ module.exports = grunt => {
 		checktextdomain: {
 			standard: {
 				options: {
-					text_domain: projectConfig.name, //Specify allowed domain(s)
+					text_domain: projectConfig.text_domain, //Specify allowed domain(s)
 					// correct_domain: true, // don't use it, it has bugs
 					keywords: [ //List keyword specifications
 						'__:1,2d',
@@ -163,7 +164,7 @@ module.exports = grunt => {
 	# Project   : ${projectConfig.name}
 	# Dist      : ${projectConfig.distDir}
 	# Version   : ${projectConfig.version}`.cyan,
-			textdomainchecking: `Checking textdomain [${projectConfig.name}]`.cyan,
+			textdomainchecking: `Checking textdomain [${projectConfig.text_domain}]`.cyan,
 			minifying: `Minifying js & css files.`.cyan,
 			finish: `
 			╭─────────────────────────────────────────────────────────────────╮
