@@ -214,14 +214,15 @@ $url = Utils::url_add_params($url, ['key' => 'value', 'key1' => 'value1']);
 | Available Methods | Example |
 | ------------------------ | ---------------------------------------------------- |
 | `asset()` | Get asset URL |
-| `version()` | Get your plugin currency version |
+| `version()` | Get your plugin current version |
 | `json_encode_for_attr()` | JSON encoding for HTML attribute. you can use it for passing data from PHP to js with data- attribute |
 | `url_add_params()` | You can add params to the URL using this method. If you use this method `? And &` will not conflict. |
+| `is_admin_page` | Using the method you can check the admin's current page inside any hook. no matter whether the wp is fully loaded or not. |
 | `import_elementor_demo()` | You can import Elementor demo in wp post. The specialty of this method is that your demo will import the SVG correctly. |
 
 ## Tailwind Css Config
 
-You need to add a class to the parent element of the element or component you want to style with tailwindcss. For using this approach, tailwind CSS will not conflict with WordPress er default style.
+You need to add a class to the parent element of the element or component you want to style with tailwindcss. For using this approach, tailwind CSS will not conflict with WordPress er default style and you don't need to add the prefix for every tailwind class.
 
 1. For configuration, the parent class goes to the `postcss.config.js` file.
 
@@ -235,7 +236,7 @@ const parent_selector = '.parent-selector'
 
 <div class="parent-selector">
 	<button type="button" disabled="" class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-indigo-500 hover:bg-indigo-400 transition ease-in-out duration-150 cursor-pointer">
-	Submit
+		Submit
 	</button>
 </div>
 ```
