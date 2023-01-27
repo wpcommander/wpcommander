@@ -8,6 +8,7 @@ class Application extends WpCommanderApplication
 {
     public static $instance, $config;
     protected static $instances = [], $configs = [], $is_boot = false, $root_dir, $root_url;
+    public static Container $container;
 
     public function configuration(): array
     {
