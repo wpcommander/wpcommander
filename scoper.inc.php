@@ -11,6 +11,28 @@ use Isolated\Symfony\Component\Finder\Finder;
 // to auto-load any code here: it can result in a conflict or even corrupt
 // the PHP-Scoper analysis.
 
+$polyfillsBootstraps = array_map(
+    static fn (SplFileInfo $fileInfo) => $fileInfo->getPathname(),
+    iterator_to_array(
+        Finder::create()
+            ->files()
+            ->in(__DIR__ . '/vendor-src/symfony/polyfill-*')
+            ->name('bootstrap*.php'),
+        false,
+    ),
+);
+
+$polyfillsStubs = array_map(
+    static fn (SplFileInfo $fileInfo) => $fileInfo->getPathname(),
+    iterator_to_array(
+        Finder::create()
+            ->files()
+            ->in(__DIR__ . '/vendor-src/symfony/polyfill-*/Resources/stubs')
+            ->name('*.php'),
+        false,
+    ),
+);
+
 return [
     // The prefix configuration. If a non null value is be used, a random prefix
     // will be generated instead.
@@ -50,7 +72,9 @@ return [
     //
     // For more see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#patchers
     'exclude-files' => [
-        'vendor-src/wpcommander/framework/src/Helpers/Helper.php'
+        'vendor-src/wpcommander/framework/src/Helpers/Helper.php',
+        ...$polyfillsBootstraps,
+        ...$polyfillsStubs,
     ],
 
     // When scoping PHP files, there will be scenarios where some of the code being scoped indirectly references the
@@ -75,7 +99,8 @@ return [
         // '~^PHPUnit\\\\Framework$~',    // The whole namespace PHPUnit\Framework (but not sub-namespaces)
         // '~^$~',                        // The root namespace only
         // '',                            // Any namespace
-        'Elementor'
+        'Elementor',
+        'Symfony\Polyfill'
     ],
     'exclude-classes' => [
         'WP_REST_Request'
@@ -85,6 +110,7 @@ return [
         // 'mb_str_split',
     ],
     'exclude-constants' => [
+        '/^SYMFONY\_[\p{L}_]+$/',
         // 'STDIN',
     ],
 
