@@ -1,7 +1,7 @@
 <?php
 
-use Wpcommander\Artisan\Artisan;
+use PluginNameSpace\Wpcommander\Artisan\Artisan;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/vendor-src/autoload.php';
 
 Artisan::exec( __DIR__ );
