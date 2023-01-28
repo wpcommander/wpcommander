@@ -2,7 +2,7 @@
 
 namespace PluginNameSpace\App\Http\Middleware;
 
-use WpCommander\Contracts\Middleware;
+use PluginNameSpace\WpCommander\Contracts\Middleware;
 use WP_REST_Request;
 
 class EnsureIsUserAdmin implements Middleware

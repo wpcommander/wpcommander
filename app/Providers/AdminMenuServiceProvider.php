@@ -2,7 +2,7 @@
 
 namespace PluginNameSpace\App\Providers;
 
-use WpCommander\Contracts\ServiceProvider;
+use PluginNameSpace\WpCommander\Contracts\ServiceProvider;
 
 class AdminMenuServiceProvider extends ServiceProvider
 {

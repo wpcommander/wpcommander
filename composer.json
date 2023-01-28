@@ -2,26 +2,48 @@
     "name": "wpcommander/wpcommander",
     "type": "project",
     "license": "MIT",
-    "require": {
-        "php": ">=7.4",
-        "wpcommander/framework": "1.0.0"
-    },
-    "require-dev": {
-        "wpcommander/artisan": "1.0.0"
-    },
     "scripts": {
+        "generate": [
+            "composer update --no-cache",
+            "composer bin php-scoper require --dev humbug/php-scoper"
+        ],
+        "scoper-init": "php-scoper init",
+        "add-prefix": [
+            "vendor-src/bin/php-scoper add-prefix --output-dir vendor --force",
+            "composer dump-autoload -d vendor"
+        ],
         "build": [
-            "@composer --no-plugins --no-interaction install --no-scripts --no-dev"
+            "@composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
         ]
     },
     "autoload": {
         "psr-4": {
-            "PluginNameSpace\\App\\": "app/",
-            "PluginNameSpace\\Bootstrap\\": "bootstrap/"
+            "App\\": "./../app/",
+            "Bootstrap\\": "./../bootstrap/",
+            "Database\\": "./../database/"
         },
         "files": [
-            "./app/helpers/helper.php"
+            "./../app/Helpers/helper.php"
         ]
+    },
+    "require": {
+        "php": ">=7.4",
+        "wpcommander/framework": "*"
+    },
+    "require-dev": {
+        "wpcommander/artisan": "1.0.0",
+        "bamarni/composer-bin-plugin": "^1.5"
+    },
+    "config": {
+        "vendor-dir": "vendor-src",
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
+    },
+    "extra": {
+        "bamarni-bin": {
+            "target-directory": "vendor-src/vendor-bin"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

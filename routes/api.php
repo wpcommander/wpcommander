@@ -1,7 +1,7 @@
 <?php
 
 use PluginNameSpace\App\Http\Controllers\UserController;
-use PluginNameSpace\Bootstrap\Route;
+use PluginNameSpace\WpCommander\Route\Route;
 
 /**
  * Frontend rest api

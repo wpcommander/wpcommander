@@ -17,7 +17,7 @@
 
 use PluginNameSpace\Bootstrap\Application;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/vendor-src/autoload.php';
 
 class PluginNameSpace
 {

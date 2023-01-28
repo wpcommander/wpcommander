@@ -1,6 +1,6 @@
 <?php
 
-use PluginNameSpace\Bootstrap\Application;
+use PluginNameSpace\WpCommander\Application;
 
 /**
  * @var Application $application
