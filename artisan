@@ -1,6 +1,6 @@
 <?php
 
-use PluginNameSpace\Wpcommander\Artisan\Artisan;
+use PluginNameSpace\WpCommander\Artisan\Artisan;
 
 require_once __DIR__ . '/vendor/vendor-src/autoload.php';
 

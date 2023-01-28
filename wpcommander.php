@@ -15,7 +15,7 @@
  * Domain Path:       /languages
  */
 
-use PluginNameSpace\Wpcommander\Application;
+use PluginNameSpace\WpCommander\Application;
 
 require_once __DIR__ . '/vendor/vendor-src/autoload.php';
 
