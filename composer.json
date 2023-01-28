@@ -5,7 +5,8 @@
     "scripts": {
         "generate": [
             "composer update --no-cache",
-            "composer bin php-scoper require --dev humbug/php-scoper"
+            "composer bin php-scoper require --dev humbug/php-scoper",
+            "composer add-prefix"
         ],
         "scoper-init": "php-scoper init",
         "add-prefix": [
@@ -13,7 +14,7 @@
             "composer dump-autoload -d vendor"
         ],
         "build": [
-            "@composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
+            "composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
         ]
     },
     "autoload": {
