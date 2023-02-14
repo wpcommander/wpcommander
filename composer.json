@@ -3,16 +3,19 @@
     "type": "project",
     "license": "MIT",
     "scripts": {
+        "generate-prefix": [
+			"composer generate",
+			"composer add-prefix"
+		],
         "generate": [
-            "composer update --no-cache",
-            "composer bin php-scoper require --dev humbug/php-scoper",
-            "composer add-prefix"
-        ],
-        "scoper-init": "php-scoper init",
+			"composer update --no-cache",
+			"composer bin php-scoper require --dev humbug/php-scoper"
+		],
         "add-prefix": [
-            "vendor-src/bin/php-scoper add-prefix --output-dir vendor --force",
-            "composer dump-autoload -d vendor"
-        ],
+			"vendor-src/bin/php-scoper add-prefix --output-dir vendor --force",
+			"composer dump-autoload -d vendor"
+		],
+        "scoper-init": "php-scoper init",
         "build": [
             "composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
         ]
